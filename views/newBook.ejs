@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add new book</title>
+    <link rel="stylesheet" href="/styles/new.css">
+</head>
+<body>
+    <button class="back-btn" onclick="window.location.href='/'">
+        <img src="/asset/icons/back-white.svg" alt="Back">
+    </button>
+    <form action="/add" method="post">
+        <div class="container">
+            <div class="header">
+                <h1>Add a new book!</h1>
+                <%if(locals.error){%>
+                    <p style="color: rgb(255, 100, 100);"><%= error %></p>
+                <%}%>
+            </div>
+            <p>Book title:</p>
+            <input type="text" name="title" placeholder="Book Title" required>
+            
+            <p>Book author:</p>
+            <input type="text" name="author" placeholder="Author name" required>
+            
+            <p>Book ISBN:</p>
+            <input type="number" name="isbn" placeholder="Book ISBN" required>
+
+            <p>Add notes:</p>
+            <textarea name="notes" placeholder="Your thoughts..." required></textarea>
+            
+            <p>Rating (1-10):</p>
+            <input type="number" name="rating" min="1" max="10" placeholder="Rate 1-10" required>
+            
+            <p>Date read:</p>
+            <input type="date" name="date_read" required>
+            
+            <button class="submit" type="submit">Add Book</button>
+        </div>
+    </form>
+</body>
+</html>

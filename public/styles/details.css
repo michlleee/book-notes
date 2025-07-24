@@ -1,0 +1,135 @@
+html {
+    background-color: #201e2b;
+    color: #f1f1f1;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.wrappper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 60%;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background: linear-gradient(145deg, #383468, #1e1d2f);
+    border-radius: 8px;
+    border: 1px solid black;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    width: 100%;
+}
+
+.book-cover {
+    width: 230px;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.other-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-btn {
+    width: fit-content;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding: 8px 12px;
+    background-color: #9e94db;
+    color: #333;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.edit-btn:hover {
+    background-color: #8476d6;
+}
+
+.notes {
+    background: linear-gradient(145deg, #383468, #1e1d2f);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid black;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    align-items: center;
+}
+
+.notes p {
+    text-align: justify;
+    white-space: pre-line;
+}
+
+.notes-textarea {
+    width: 50vw;
+    height: 60vh;
+    padding: 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    color: white;
+    border:  1px solid #ccc;
+    background-color: #3d3b54;
+    resize: vertical;
+}
+
+.notes-textarea:focus {
+    outline: 2px solid #cfc8f5;
+    background-color: #3d3b54;
+}
+
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: transparent;
+    border: none;
+    transition: transform 0.3s;
+}
+
+.back-btn:hover {
+    transform: translateX(-5px);
+}
+
+.back-btn img {
+    width: 50px;
+}
+
+.delete-btn {
+    border: 2px solid red;
+    background-color: #d14545;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+.delete-btn:hover{
+    transform: translateY(-2px);
+    background-color: #af2929;
+}

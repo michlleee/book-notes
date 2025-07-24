@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Details</title>
+    <link rel="stylesheet" href="/styles/details.css">
+</head>
+<body>
+    <button class="back-btn" onclick="window.location.href='/'">
+        <img src="/asset/icons/back-white.svg" alt="Back">
+    </button>
+    <div class="wrappper">
+        <div class="main-container">
+            <img class="book-cover" src="https://covers.openlibrary.org/b/isbn/<%= book.isbn %>-M.jpg" alt="Cover of Book <%= book.title %>">
+            <div class="other-info">
+                <h1><%= book.title %></h1>
+                <p>Author: <%= book.author %></p>
+                <p>ISBN: <%= book.isbn %></p>
+                <p>Date read: <%= new Date (book.date_read).toISOString().split('T')[0] %></p>
+                <p>My personal rating: <%= book.rating %>/10</p>
+            </div>
+        </div>
+        <div class="notes">
+            <h1>My Notes</h1>
+            <form class="notes-form" action="/edit" method="post">
+                <input type="hidden" name="updatedBookId" value="<%= book.id %>">
+                <% if(edited){ %>
+                    <button type="submit" class="edit-btn">Save Changes</button>
+                    <textarea class="notes-textarea" name="updatedNote" id="input<%=book.id%>" autofocus="true"
+                        autocomplete="off"><%= book.notes %></textarea>
+                <%}else{ %>
+                    <button type="button" class="edit-btn" onclick="window.location.href='/books/<%=book.id%>?edit=true'">Edit Notes</button>
+                    <p id="note<%= book.id %>"><%= book.notes%></p>
+                <%} %>
+            </form>
+        </div>
+
+        <form action="/delete" method="post">
+            <input type="hidden" name="deleteBookId" value="<%= book.id %>">
+            <button class="delete-btn" type="submit">Delete Book</button>
+        </form>
+    </div>
+</body>
+</html>

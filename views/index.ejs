@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Book Notes</title>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="text-container">
+            <h1>My Book Notes</h1>
+            <p>Welcome back! feel free to add notes from your favorite books!</p>
+        </div>
+
+        <div class="button-container">
+            <form action="/new" method="get">
+                <button class="submit-btn" type="submit">Add new book</button>
+            </form>
+            <div class="dropdown">
+                <button class="dropBtn">Sort By <img src="/asset/icons/drop-down-icon.svg" alt="dropdown icon"></button>
+                <div id="filterDrop" class="dropdown-content">
+                    <form action="/" method="get">
+                        <div class="type">
+                            <button type="submit" name="sort" value="title">Title</button>
+                        </div>
+                        <div class="type">
+                            <button type="submit" name="sort" value="author">Author</button>
+                        </div>
+                        <div class="type">
+                            <button type="submit" name="sort" value="rating">Rating</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="books-container">
+            <%if(book.length === 0){%>
+                <p>No books available, please add a book.</p>
+            <%}else{%>
+                <% book.forEach(b => {%>
+                    <div class="book-card">
+                        <img src="https://covers.openlibrary.org/b/isbn/<%= b.isbn %>-M.jpg" alt="Cover of book <%= b.title %>"/>
+                        <div class="book-details">
+                            <h3><%= b.title %></h3>
+                            <p>Author: <%= b.author %></p>
+                            <p>Read Date: <%= new Date (b.date_read).toISOString().split('T')[0] %></p>
+                            <p>Personal Rating: <%= b.rating %>/10</p>
+                            <a class="view-btn" draggable="false" href="/books/<%= b.id %>">View Notes</a>
+                        </div>
+                    </div>
+                <%}); %>
+            <%}%>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/asset/js/dropdown.js"></script>
+</body>
+</html>
