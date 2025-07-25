@@ -85,6 +85,7 @@ Setup Instructions:
    ```
 
 6. Create a `.env` file in the root folder:
+   ```
    Example contents:
    GOOGLE_CLIENT_ID=your_client_id
    GOOGLE_CLIENT_SECRET=your_client_secret
@@ -94,6 +95,7 @@ Setup Instructions:
    DB_USER=your_db_username
    DB_PASSWORD=your_db_password
    DB_NAME=your_database_name
+   ```
 
 7. Start the server:
    npm start
