@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Notes</title>
+    <link rel="stylesheet" href="/styles/landing.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barrio&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>
+            Welcome to
+            <img draggable="false" style="width: 80px; padding: 0 5px;" src="/asset/icons/book-opened.svg"
+                alt="open book" />
+            <span style="color: #857bd8; text-decoration: underline;">Notes</span>
+        </h1>
+        <p>Keep notes about your favorite books here!</p>
+
+        <div class="wrapper">
+            <button id="show-login" class="login-btn">Login</button>
+            <button id="show-register" class="regis-btn">Register</button>
+        </div>
+
+        <div class="form-container">
+            <p style="margin: 0px;"><%= error %></p>
+            <form id="login-form" action="/login" method="POST" class="form active">
+                <label>Email</label>
+                <input type="email" name="email" required />
+                <label>Password</label>
+                <input type="password" name="password" required />
+                <button type="submit" class="submit-form-btn">Login</button>
+                <a class="google-btn" href="/auth/google" role="button">
+                    <img src="/asset/icons/google.svg" alt="google icon" />
+                    <span>Sign in with Google</span>
+                </a>
+            </form>
+
+            <form id="register-form" action="/register" method="POST" class="form">
+                <label>Username</label>
+                <input type="text" name="username" required />
+                <label>Email</label>
+                <input type="email" name="email" required />
+                <label>Password</label>
+                <input type="password" name="password" required />
+                <button type="submit" class="submit-form-btn">Register</button>
+                <a class="google-btn" href="/auth/google" role="button">
+                    <img src="/asset/icons/google.svg" alt="google icon" />
+                    <span>Sign Up with Google</span>
+                </a>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $("#show-login").on("click", ()=>{
+            $("#login-form").addClass("active");
+            $("#register-form").removeClass("active");
+        });
+
+        $("#show-register").on("click", () => {
+            $("#register-form").addClass("active");
+            $("#login-form").removeClass("active");
+        });
+    </script>
+</body>
+
+</html>

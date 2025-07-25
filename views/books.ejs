@@ -9,18 +9,20 @@
 <body>
     <div class="main-container">
         <div class="text-container">
-            <h1>My Book Notes</h1>
+            <%if(locals.username){%>
+                <h1><%= username %>'s Book Notes</h1>
+            <%}%>
             <p>Welcome back! feel free to add notes from your favorite books!</p>
         </div>
-
         <div class="button-container">
+            <a class="logout-btn" role="button" href="/logout">Log out</a>
             <form action="/new" method="get">
                 <button class="submit-btn" type="submit">Add new book</button>
             </form>
             <div class="dropdown">
                 <button class="dropBtn">Sort By <img src="/asset/icons/drop-down-icon.svg" alt="dropdown icon"></button>
                 <div id="filterDrop" class="dropdown-content">
-                    <form action="/" method="get">
+                    <form action="/books" method="get">
                         <div class="type">
                             <button type="submit" name="sort" value="title">Title</button>
                         </div>
@@ -35,10 +37,13 @@
             </div>
         </div>
 
-        <div class="books-container">
-            <%if(book.length === 0){%>
+        
+        <%if(book.length === 0){%>
+            <div class="alert-msg">
                 <p>No books available, please add a book.</p>
-            <%}else{%>
+            </div>
+        <%}else{%>
+            <div class="books-container">
                 <% book.forEach(b => {%>
                     <div class="book-card">
                         <img src="https://covers.openlibrary.org/b/isbn/<%= b.isbn %>-M.jpg" alt="Cover of book <%= b.title %>"/>
@@ -51,8 +56,8 @@
                         </div>
                     </div>
                 <%}); %>
-            <%}%>
-        </div>
+            </div>
+        <%}%>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="/asset/js/dropdown.js"></script>

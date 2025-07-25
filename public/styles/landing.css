@@ -1,0 +1,137 @@
+html {
+    background-color: #201e2b;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    color: white;
+}
+
+h1 {
+    font-size: 3rem;
+    font-family: "barrio";
+    margin: 20px;
+}
+
+.container p {
+    font-size: 1rem;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    gap: 1vh;
+    height: 10vh;
+}
+
+.wrapper a,
+.wrapper button {
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 12px 15px;
+    height: fit-content;
+    border: 2px solid rgb(38, 25, 71);
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.regis-btn {
+    color: white;
+    background-color: #423979;
+    transition: 0.3s ease-in-out;
+}
+
+.regis-btn:hover {
+    background-color: #362e66;
+}
+
+.login-btn {
+    color: #423979;
+    background-color: #ebebeb;
+    transition: 0.3s ease-in-out;
+}
+
+.login-btn:hover {
+    background-color: #c4c4c4;
+}
+
+.form-container {
+    margin-top: 20px;
+    background-color: #2b2a3a;
+    padding: 30px;
+    border-radius: 10px;
+    width: 300px;
+}
+
+.form {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    color: white;
+}
+
+.form.active {
+    display: flex;
+}
+
+label {
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+input {
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    background-color: #3a394b;
+    color: white;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #857bd8;
+}
+
+.submit-form-btn {
+    background-color: #5e5ce6;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.google-btn {
+    font-family: Arial, Helvetica, sans-serif;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    display: inline-block;
+    background-color: #ffffff;
+    color: #6b61ca;
+    padding: 10px;
+    border-radius: 6px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.google-btn img {
+    padding-right: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+.google-btn:hover {
+    background-color: #cccccc;
+}
