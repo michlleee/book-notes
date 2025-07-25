@@ -104,11 +104,12 @@ Setup Instructions:
 
 Folder Structure:
 -----------------
+```
 /public           - Static files like CSS, JS and assets
 /views            - EJS templates
 .env              - Hidden file storing your DB credentials (DO NOT COMMIT)
 /index.js         - Main server file
-
+```
 Notes:
 ------
 - The project uses `dotenv` to keep your PostgreSQL and google credentials private.
