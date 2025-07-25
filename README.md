@@ -7,6 +7,10 @@ This is a web-based Book Tracker application built with Node.js, Express, and Po
 It allows users to add, view, edit, and delete books they have read, along with storing notes and ratings.
 The app uses the Open Library API to validate book title, author, ISBN and to get book covers (as images to be displayed).
 
+<img width="3193" height="1638" alt="image" src="https://github.com/user-attachments/assets/dd891dee-243f-4f87-86fa-ef28dfa2b41e" />
+<img width="3195" height="1648" alt="image" src="https://github.com/user-attachments/assets/6e1b9ce1-5a8e-4bc3-bed9-c601248beb27" />
+<img width="3182" height="1607" alt="image" src="https://github.com/user-attachments/assets/566b302c-a0d0-46dc-ac76-7529024f557e" />
+
 Features:
 ---------
 - View a list of all books sorted by title, author, or rating
